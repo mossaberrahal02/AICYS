@@ -214,6 +214,36 @@ body {
     color: var(--secondary-color);
 }
 
+/* Sections */
+.section {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.section:nth-child(even) {
+    background-color: var(--white);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+}
+
 /* Program Overview */
 .program-grid {
     display: grid;
@@ -262,9 +292,15 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .tab-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.tab-btn:hover {
     background-color: var(--secondary-color);
     color: var(--white);
 }
@@ -278,12 +314,18 @@ body {
 
 .tab-content {
     display: none;
+    animation: fadeIn 0.5s ease;
 }
 
 .tab-content.active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .semester h3 {
@@ -476,11 +518,23 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
 }
 
 .footer-logo-img {
     height: 60px;
     margin-bottom: 1rem;
+}
+
+.footer-logo h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
 }
 
 .footer-links {
@@ -492,21 +546,31 @@ textarea {
 .footer-links h4 {
     margin-bottom: 1rem;
     color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .footer-links a {
     color: var(--white);
     text-decoration: none;
     transition: color 0.3s ease;
+    opacity: 0.8;
 }
 
 .footer-links a:hover {
     color: var(--secondary-color);
+    opacity: 1;
+}
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .footer-newsletter h4 {
     margin-bottom: 1rem;
     color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .newsletter-form {
@@ -516,12 +580,28 @@ textarea {
 
 .newsletter-form input {
     flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
 }
 
 .copyright {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
 }
 
 /* Buttons */
