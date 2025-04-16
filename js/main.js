@@ -1,9 +1,36 @@
 // Mobile Menu Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const body = document.body;
 
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+// Function to toggle mobile menu
+function toggleMobileMenu() {
+    navLinks.classList.toggle('active');
+    body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+}
+
+// Event listener for mobile menu button
+mobileMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && 
+        !e.target.closest('.nav-links') && 
+        !e.target.closest('.mobile-menu-btn')) {
+        toggleMobileMenu();
+    }
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            toggleMobileMenu();
+        }
+    });
 });
 
 // Smooth Scrolling for Navigation Links
@@ -16,10 +43,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
-            // Close mobile menu if open
-            if (window.innerWidth <= 768) {
-                navLinks.style.display = 'none';
-            }
         }
     });
 });
@@ -58,17 +81,17 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Responsive Navigation
-function handleResponsiveNav() {
-    if (window.innerWidth > 768) {
-        navLinks.style.display = 'flex';
-    } else {
-        navLinks.style.display = 'none';
-    }
-}
-
-window.addEventListener('resize', handleResponsiveNav);
-handleResponsiveNav();
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        }
+    }, 250);
+});
 
 // Add animation to sections when they come into view
 const sections = document.querySelectorAll('.section');
