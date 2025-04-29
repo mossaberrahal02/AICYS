@@ -19,11 +19,16 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="#program">Program</a>
-                <a href="#curriculum">Curriculum</a>
-                <a href="#admissions">Admissions</a>
-                <a href="#careers">Careers</a>
-                <a href="#contact" class="cta-button">Contact Us</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn">
+                        <span>FR</span>
+                    </button>
+                </div>
+                <a href="#program" data-translate="program">Program</a>
+                <a href="#curriculum" data-translate="curriculum">Curriculum</a>
+                <a href="#admissions" data-translate="admissions">Admissions</a>
+                <a href="#careers" data-translate="careers">Careers</a>
+                <a href="#contact" data-translate="contact">Contact Us</a>
             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -35,23 +40,23 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Master's Program in Artificial Intelligence & Cybersecurity</h1>
-                <p class="hero-subtitle">Become an expert in the intersection of AI and Cybersecurity</p>
+                <h1 data-translate="heroTitle">Master's Program in Artificial Intelligence & Cybersecurity</h1>
+                <p data-translate="heroSubtitle">Become an expert in the intersection of AI and Cybersecurity</p>
                 <div class="hero-features">
                     <div class="feature">
                         <i class="fas fa-graduation-cap"></i>
-                        <span>2 Years</span>
+                        <span data-translate="years">2 Years</span>
                     </div>
                     <div class="feature">
                         <i class="fas fa-language"></i>
-                        <span>English</span>
+                        <span data-translate="language">English</span>
                     </div>
                     <div class="feature">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Campus FSK BP 133 Maroc</span>
+                        <span data-translate="location">Campus FSK BP 133 Maroc</span>
                     </div>
                 </div>
-                <a href="#admissions" class="cta-button">Apply Now</a>
+                <a href="#admissions" class="cta-button" data-translate="applyNow">Apply Now</a>
             </div>
         </div>
     </section>
@@ -59,22 +64,22 @@
     <!-- Program Overview -->
     <section id="program" class="section">
         <div class="container">
-            <h2>Program Overview</h2>
+            <h2 data-translate="programOverview">Program Overview</h2>
             <div class="program-grid">
                 <div class="program-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Cybersecurity Expertise</h3>
-                    <p>Master advanced security concepts and threat analysis</p>
+                    <h3 data-translate="cybersecurity">Cybersecurity Expertise</h3>
+                    <p data-translate="cybersecurityDesc">Master advanced security concepts and threat analysis</p>
                 </div>
                 <div class="program-card">
                     <i class="fas fa-brain"></i>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Develop cutting-edge AI solutions for security</p>
+                    <h3 data-translate="ai">AI & Machine Learning</h3>
+                    <p data-translate="aiDesc">Develop cutting-edge AI solutions for security</p>
                 </div>
                 <div class="program-card">
                     <i class="fas fa-handshake"></i>
-                    <h3>Industry Partnerships</h3>
-                    <p>Work with leading tech companies</p>
+                    <h3 data-translate="industry">Industry Partnerships</h3>
+                    <p data-translate="industryDesc">Work with leading tech companies</p>
                 </div>
             </div>
         </div>
@@ -83,20 +88,20 @@
     <!-- Curriculum Section -->
     <section id="curriculum" class="section">
         <div class="container">
-            <h2>Curriculum</h2>
+            <h2 data-translate="curriculum">Curriculum</h2>
             <div class="curriculum-tabs">
-                <button class="tab-btn active" data-tab="year1">Year 1</button>
-                <button class="tab-btn" data-tab="year2">Year 2</button>
+                <button class="tab-btn active" data-tab="year1" data-translate="semester1">Year 1</button>
+                <button class="tab-btn" data-tab="year2" data-translate="semester2">Year 2</button>
             </div>
             <div class="curriculum-content">
                 <div class="tab-content active" id="year1">
                     <div class="semester">
-                        <h3>Semester 1</h3>
+                        <h3 data-translate="semester1Title">Semester 1</h3>
                         <ul>
-                            <li>Advanced Machine Learning</li>
-                            <li>Cybersecurity Fundamentals</li>
-                            <li>Network Security</li>
-                            <li>Data Privacy & Protection</li>
+                            <li data-translate="course1">Advanced Machine Learning</li>
+                            <li data-translate="course2">Cybersecurity Fundamentals</li>
+                            <li data-translate="course3">Network Security</li>
+                            <li data-translate="course4">Data Privacy & Protection</li>
                         </ul>
                     </div>
                     <div class="semester">
@@ -134,10 +139,10 @@
     <!-- Admissions Section -->
     <section id="admissions" class="section">
         <div class="container">
-            <h2>Admissions</h2>
+            <h2 data-translate="admissions">Admissions</h2>
             <div class="admissions-content">
                 <div class="requirements">
-                    <h3>Requirements</h3>
+                    <h3 data-translate="requirements">Requirements</h3>
                     <ul>
                         <li><i class="fas fa-check"></i> Bachelor's degree in Computer Science or related field</li>
                         <li><i class="fas fa-check"></i> Strong programming background</li>
@@ -147,18 +152,18 @@
                     </ul>
                 </div>
                 <div class="application-form">
-                    <h3>Start Your Application</h3>
+                    <h3 data-translate="startApplication">Start Your Application</h3>
                     <form id="applicationForm">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="tel" placeholder="Phone Number">
-                        <select required>
+                        <input type="text" placeholder="Full Name" data-translate="fullName" required>
+                        <input type="email" placeholder="Email" data-translate="email" required>
+                        <input type="tel" placeholder="Phone Number" data-translate="phone">
+                        <select required data-translate="selectProgram">
                             <option value="">Select Program</option>
-                            <option value="full-time">Full-time Program</option>
-                            <option value="part-time">Part-time Program</option>
+                            <option value="full-time" data-translate="fullTime">Full-time Program</option>
+                            <option value="part-time" data-translate="partTime">Part-time Program</option>
                         </select>
-                        <textarea placeholder="Why are you interested in this program?" required></textarea>
-                        <button type="submit" class="cta-button">Submit Application</button>
+                        <textarea placeholder="Why are you interested in this program?" data-translate="interest" required></textarea>
+                        <button type="submit" class="cta-button" data-translate="submitApplication">Submit Application</button>
                     </form>
                 </div>
             </div>
@@ -168,16 +173,16 @@
     <!-- Careers Section -->
     <section id="careers" class="section">
         <div class="container">
-            <h2>Career Opportunities</h2>
+            <h2 data-translate="careerOpportunities">Career Opportunities</h2>
             <div class="careers-grid">
                 <div class="career-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>AI Security Specialist</h3>
-                    <p>Average Salary: $120,000</p>
+                    <h3 data-translate="career1">AI Security Specialist</h3>
+                    <p data-translate="career1Salary">Average Salary: $120,000</p>
                     <ul>
-                        <li>Develop AI-powered security solutions</li>
-                        <li>Implement threat detection systems</li>
-                        <li>Conduct security assessments</li>
+                        <li data-translate="career1Desc1">Develop AI-powered security solutions</li>
+                        <li data-translate="career1Desc2">Implement threat detection systems</li>
+                        <li data-translate="career1Desc3">Conduct security assessments</li>
                     </ul>
                 </div>
                 <div class="career-card">
@@ -207,7 +212,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 data-translate="getInTouch">Get in Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
@@ -249,7 +254,7 @@
                     <p>Shaping the future of technology</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4 data-translate="quickLinks">Quick Links</h4>
                     <a href="#program">Program</a>
                     <a href="#curriculum">Curriculum</a>
                     <a href="#admissions">Admissions</a>
@@ -257,7 +262,7 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
+                    <h4 data-translate="stayUpdated">Stay Updated</h4>
                     <form class="newsletter-form" id="newsletter-form">
                         <input type="email" placeholder="Enter your email">
                         <button type="submit" class="cta-button">Subscribe</button>
@@ -265,7 +270,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Master's Program in AI & Cybersecurity. All rights reserved.</p>
+                <p data-translate="copyright">&copy; 2024 Master's Program in AI & Cybersecurity. All rights reserved.</p>
             </div>
         </div>
     </footer>
