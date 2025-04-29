@@ -50,6 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form Submission Handling
 const applicationForm = document.getElementById('applicationForm');
 const contactForm = document.getElementById('contactForm');
+const stayUpdated = document.getElementById('newsletter-form');
 
 if (applicationForm) {
     applicationForm.addEventListener('submit', function(e) {
@@ -65,6 +66,16 @@ if (contactForm) {
         e.preventDefault();
         // Here you would typically send the form data to a server
         alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+    });
+}
+
+
+if (stayUpdated) {
+    stayUpdated.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to a server
+        alert('Thank you for your interest! We will keep you updated.');
         this.reset();
     });
 }
