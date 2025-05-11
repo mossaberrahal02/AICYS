@@ -144,24 +144,23 @@
                 <div class="requirements">
                     <h3 data-translate="requirements">Requirements</h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Bachelor's degree in Computer Science or related field</li>
-                        <li><i class="fas fa-check"></i> Strong programming background</li>
-                        <li><i class="fas fa-check"></i> English proficiency (TOEFL/IELTS)</li>
-                        <li><i class="fas fa-check"></i> Statement of purpose</li>
-                        <li><i class="fas fa-check"></i> Letters of recommendation</li>
+                        <li><i class="fas fa-check"></i><span data-translate="requirement1">Bachelor's degree in Computer Science or related field</span></li>
+                        <li><i class="fas fa-check"></i><span data-translate="requirement2">Strong programming background</span></li>
+                        <li><i class="fas fa-check"></i><span data-translate="requirement3">English proficiency (TOEFL/IELTS)</span></li>
+                        <li><i class="fas fa-check"></i><span data-translate="requirement4">Statement of purpose</span></li>
+                        <li><i class="fas fa-check"></i><span data-translate="requirement5">Letters of recommendation</span></li>
                     </ul>
                 </div>
                 <div class="application-form">
                     <h3 data-translate="startApplication">Start Your Application</h3>
                     <form id="applicationForm">
-                        <input type="text" placeholder="Full Name" data-translate="fullName" required>
+                        <!-- <input type="text" placeholder="Full Name" data-translate="fullName" required>
                         <input type="email" placeholder="Email" data-translate="email" required>
-                        <input type="tel" placeholder="Phone Number" data-translate="phone">
-                        <select required data-translate="selectProgram">
-                            <option value="">Select Program</option>
-                            <option value="full-time" data-translate="fullTime">Full-time Program</option>
-                            <option value="part-time" data-translate="partTime">Part-time Program</option>
-                        </select>
+                        <input type="tel" placeholder="Phone Number" data-translate="phone"> -->
+                        <!-- Form Fields with data-translate attributes -->
+                        <input type="text" id="fullName" name="fullName" placeholder="Full Name" data-translate="fullName">
+                        <input type="email" id="email" name="email" placeholder="Email" data-translate="email">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" data-translate="phoneNumber">
                         <textarea placeholder="Why are you interested in this program?" data-translate="interest" required></textarea>
                         <button type="submit" class="cta-button" data-translate="submitApplication">Submit Application</button>
                     </form>
@@ -187,7 +186,7 @@
                 </div>
                 <div class="career-card">
                     <i class="fas fa-user-shield"></i>
-                    <h3>Cybersecurity Analyst</h3>
+                    <h3 data-translate="career2">Cybersecurity Analyst</h3>
                     <p>Average Salary: $95,000</p>
                     <ul>
                         <li>Monitor security systems</li>
@@ -197,7 +196,7 @@
                 </div>
                 <div class="career-card">
                     <i class="fas fa-robot"></i>
-                    <h3>Machine Learning Engineer</h3>
+                    <h3 data-translate="career3">Machine Learning Engineer</h3>
                     <p>Average Salary: $110,000</p>
                     <ul>
                         <li>Develop ML models</li>
@@ -215,7 +214,7 @@
             <h2 data-translate="getInTouch">Get in Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
+                    <h3></h3>
                     <p><i class="fas fa-envelope"></i> master.iacys@gmail.com</p>
                     <p><i class="fas fa-envelope"></i> Coordinator: said.tkatek@uit.ac.ma</p>
                     <p><i class="fas fa-phone"></i> (+212) 5 37 32 94 00</p>
@@ -228,8 +227,8 @@
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Name" data-translate="fullName" required>
+                        <input type="email" placeholder="Email" data-translate="email" required>
                         <select required>
                             <option value="">Select Inquiry Type</option>
                             <option value="admissions">Admissions</option>
@@ -237,7 +236,7 @@
                             <option value="other">Other</option>
                         </select>
                         <textarea placeholder="Message" required></textarea>
-                        <button type="submit" class="cta-button">Send Message</button>
+                        <button type="submit" class="cta-button" data-translate="sendMessage">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -264,8 +263,8 @@
                 <div class="footer-newsletter">
                     <h4 data-translate="stayUpdated">Stay Updated</h4>
                     <form class="newsletter-form" id="newsletter-form">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit" class="cta-button">Subscribe</button>
+                        <input type="email" placeholder="Enter your email" data-translate="email">
+                        <button type="submit" class="cta-button" data-translate="subscribe">Subscribe</button>
                     </form>
                 </div>
             </div>

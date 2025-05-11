@@ -341,14 +341,74 @@ if (langBtn) {
 }
 
 // Update language
+// function updateLanguage(lang) {
+//     // Update button text
+//     const langBtnText = document.querySelector('.lang-btn span');
+//     if (langBtnText) {
+//         langBtnText.textContent = lang === 'en' ? 'FR' : 'EN';
+//     }
+
+//     // Update translations
+//     const elements = document.querySelectorAll('[data-translate]');
+//     elements.forEach(element => {
+//         const key = element.dataset.translate;
+//         if (translations[lang][key]) {
+//             element.textContent = translations[lang][key];
+//         }
+//     });
+
+//     // Update form placeholders and options
+//     const forms = document.querySelectorAll('form');
+//     forms.forEach(form => {
+//         const inputs = form.querySelectorAll('input, textarea, select');
+//         inputs.forEach(input => {
+//             if (input.placeholder) {
+//                 const key = input.placeholder.toLowerCase().replace(/\s+/g, '');
+//                 if (translations[lang][key]) {
+//                     input.placeholder = translations[lang][key];
+//                 }
+//             }
+//             if (input.tagName === 'SELECT') {
+//                 const options = input.querySelectorAll('option');
+//                 options.forEach(option => {
+//                     if (option.value) {
+//                         const key = option.value.toLowerCase().replace(/\s+/g, '');
+//                         if (translations[lang][key]) {
+//                             option.textContent = translations[lang][key];
+//                         }
+//                     }
+//                 });
+//             }
+//         });
+//     });
+
+//     // Update course lists
+//     const courseLists = document.querySelectorAll('.semester ul li');
+//     courseLists.forEach((item, index) => {
+//         const key = `course${index + 1}`;
+//         if (translations[lang][key]) {
+//             item.textContent = translations[lang][key];
+//         }
+//     });
+
+//     // Update career descriptions
+//     const careerItems = document.querySelectorAll('.career-card ul li');
+//     careerItems.forEach((item, index) => {
+//         const key = `career${Math.floor(index/3) + 1}Desc${(index % 3) + 1}`;
+//         if (translations[lang][key]) {
+//             item.textContent = translations[lang][key];
+//         }
+//     });
+// }
+
 function updateLanguage(lang) {
-    // Update button text
+    // Update button text for language switcher
     const langBtnText = document.querySelector('.lang-btn span');
     if (langBtnText) {
         langBtnText.textContent = lang === 'en' ? 'FR' : 'EN';
     }
 
-    // Update translations
+    // Update translations for elements with data-translate attribute
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(element => {
         const key = element.dataset.translate;
@@ -362,44 +422,27 @@ function updateLanguage(lang) {
     forms.forEach(form => {
         const inputs = form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
-            if (input.placeholder) {
-                const key = input.placeholder.toLowerCase().replace(/\s+/g, '');
+            // Update placeholder if the data-translate attribute is present
+            if (input.placeholder && input.dataset.translate) {
+                const key = input.dataset.translate;
                 if (translations[lang][key]) {
                     input.placeholder = translations[lang][key];
                 }
             }
+
+            // Update select options based on data-translate attribute
             if (input.tagName === 'SELECT') {
                 const options = input.querySelectorAll('option');
                 options.forEach(option => {
-                    if (option.value) {
-                        const key = option.value.toLowerCase().replace(/\s+/g, '');
-                        if (translations[lang][key]) {
-                            option.textContent = translations[lang][key];
-                        }
+                    const key = option.dataset.translate || option.value.toLowerCase().replace(/\s+/g, '');
+                    if (translations[lang][key]) {
+                        option.textContent = translations[lang][key];
                     }
                 });
             }
         });
     });
-
-    // Update course lists
-    const courseLists = document.querySelectorAll('.semester ul li');
-    courseLists.forEach((item, index) => {
-        const key = `course${index + 1}`;
-        if (translations[lang][key]) {
-            item.textContent = translations[lang][key];
-        }
-    });
-
-    // Update career descriptions
-    const careerItems = document.querySelectorAll('.career-card ul li');
-    careerItems.forEach((item, index) => {
-        const key = `career${Math.floor(index/3) + 1}Desc${(index % 3) + 1}`;
-        if (translations[lang][key]) {
-            item.textContent = translations[lang][key];
-        }
-    });
 }
 
 // Initialize
-updateLanguage('en'); 
+updateLanguage('fr'); 
